@@ -1,12 +1,8 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import store from './store/configureStore'
-import Top from './containers/Top'
+import Top from './components/Top'
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Top />
-  </Provider>,
+  <Top />,
   document.getElementById('root')
 )
