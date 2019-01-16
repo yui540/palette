@@ -1,11 +1,8 @@
 import styled from 'styled-components'
+import { pcLayout, spLayout } from '../../breakpoint'
 
 export const Container = styled.div`
-
-`
-
-export const Title = styled.h1`
-  font-size: 30px;
-  text-align: center;
-  margin: 30px 0;
+  ${pcLayout(`
+    min-width: 760px;
+  `)}
 `

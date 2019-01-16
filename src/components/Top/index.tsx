@@ -1,18 +1,20 @@
 import * as React from 'react'
 import {
   Container,
-  Title,
 } from './styles'
+import Modal from '../Modal'
 
-interface Props {
-  
-}
+interface Props {}
 
 export default class Top extends React.Component<Props, {}> {
-  render() {
+  public render() {
     return (
       <Container>
-        <Title>Hello, palette.</Title>
+        <Modal
+          color="#4aa9a4"
+          productName="臆病な魔女"
+          productLink="https://github.com/yui540/unmoral"
+        />
       </Container>
     )
   }
