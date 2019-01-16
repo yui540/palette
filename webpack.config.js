@@ -6,21 +6,13 @@ module.exports = {
     filename: 'index.js',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.json'],
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        loader: "awesome-typescript-loader"
-      },
-      {
-        enforce: "pre",
-        test: /\.js$/,
-        loader: "source-map-loader"
-      },
-      {
-        test: /\.(svg|png|gif|jpg|jpeg)/,
+        test: /\.svg$/,
         use: [
           {
             loader: 'url-loader',
@@ -30,6 +22,15 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader',
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader',
       },
     ],
   },
