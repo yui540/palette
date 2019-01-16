@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./public",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react"
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
