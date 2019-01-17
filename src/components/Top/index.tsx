@@ -2,7 +2,8 @@ import * as React from 'react'
 import {
   Container,
   ColorWrapper,
-  Logo
+  Logo,
+  Footer
 } from './styles'
 import Color from '../Color'
 import Modal from '../Modal'
@@ -57,6 +58,12 @@ export default class Top extends React.Component<Props, State> {
             />
           ))}
         </ColorWrapper>
+        <Footer>
+          <div />
+          <div />
+          <div />
+          <div />
+        </Footer>
         <Preview
           open={open}
           color={color}
