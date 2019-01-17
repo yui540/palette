@@ -15,7 +15,7 @@ import {
   Footer,
   CopyButton,
   LineFront,
-  LineBack
+  LineBack,
 } from './styles'
 
 interface Props {
@@ -37,9 +37,7 @@ export default class Modal extends React.Component<Props, {}> {
           </LineBack>
           <Panel>
             <Header>
-              <Title>
-                {productName}
-              </Title>
+              <Title>{productName}</Title>
             </Header>
             <Body>
               <ColorContent>
