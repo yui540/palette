@@ -8,6 +8,22 @@ const color2 = '#5d3523'
 const color3 = '#ccc'
 const color4 = '#c2617e'
 
+export const Bg = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.8);
+  display: none;
+  opacity: 0;
+
+  &[data-show=true] {
+    display: block;
+    animation: ${fadein} 2s ease 0s forwards;
+  }
+`
+
 export const Container = styled.div`
   position: fixed;
   top: 0;
@@ -15,9 +31,10 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   perspective: 600px;
+  transform: translateY(-100%);
 
   /* animation */
-  animation: ${bound} .9s ease-out 0s forwards;
+  &[data-show=true] { animation: ${bound} 0.9s ease-out 0s forwards; }
 `
 
 export const Inner = styled.div`
@@ -28,7 +45,15 @@ export const Inner = styled.div`
   height: 100%;
 
   /* animation */
-  animation: ${rotate} 3s ease-out 0s forwards;
+  &[data-show=true] { animation: ${rotate} 3s ease-out 0s forwards; }
+`
+
+export const Close = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `
 
 export const Panel = styled.div`
@@ -72,7 +97,7 @@ export const Header = styled.div`
 export const Title = styled.div`
   color: ${color2};
   text-align: center;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 
   ${pcLayout(`
     font-size: 20px;
@@ -113,7 +138,7 @@ export const ColorContent = styled.div`
   `)}
 
   /* animation */
-  animation: ${border} 1.4s ease-out 2.6s forwards;
+  &[data-show=true] { animation: ${border} 1.4s ease-out 2.6s forwards; }
 `
 
 export const ProductName = styled.div`
@@ -135,12 +160,20 @@ export const ProductName = styled.div`
     font-size: 10px;
   `)}
 
-  span { opacity: 0; }
-  span:nth-child(1) { color: #ccc; }
+  span {
+    opacity: 0;
+  }
+  span:nth-child(1) {
+    color: #ccc;
+  }
 
   /* animation */
-  span:nth-child(1) { animation: ${fadein} .6s ease-in 1s forwards; }
-  span:nth-child(2) { animation: ${fadein} .6s ease-in 1.4s forwards; }
+  &[data-show=true] span:nth-child(1) {
+    animation: ${fadein} 0.6s ease-in 1s forwards;
+  }
+  &[data-show=true] span:nth-child(2) {
+    animation: ${fadein} 0.6s ease-in 1.4s forwards;
+  }
 `
 
 export const ColorCode = styled.div`
@@ -162,13 +195,23 @@ export const ColorCode = styled.div`
     font-size: 10px;
   `)}
 
-  span { opacity: 0; }
-  span:nth-child(1) { color: #ccc; }
-  span:nth-child(2) { text-transform: uppercase; }
+  span {
+    opacity: 0;
+  }
+  span:nth-child(1) {
+    color: #ccc;
+  }
+  span:nth-child(2) {
+    text-transform: uppercase;
+  }
 
   /* animation */
-  span:nth-child(1) { animation: ${fadein} .6s ease-in 1.8s forwards; }
-  span:nth-child(2) { animation: ${fadein} .6s ease-in 2.2s forwards; }
+  &[data-show=true] span:nth-child(1) {
+    animation: ${fadein} 0.6s ease-in 1.8s forwards;
+  }
+  &[data-show=true] span:nth-child(2) {
+    animation: ${fadein} 0.6s ease-in 2.2s forwards;
+  }
 `
 
 export const ColorLine = styled.div`
@@ -212,7 +255,7 @@ export const ColorLine = styled.div`
   }
 
   /* animation */
-  &::before { animation: ${slideRight} .8s cubic-bezier(0.86,-0.02, 0.08, 1.02) .8s forwards; }
+  &[data-show=true]::before { animation: ${slideRight} .8s cubic-bezier(0.86,-0.02, 0.08, 1.02) .8s forwards; }
 `
 
 export const PrevButton = styled.button`
@@ -239,7 +282,7 @@ export const PrevButton = styled.button`
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
   }
@@ -251,7 +294,7 @@ export const PrevButton = styled.button`
     border-radius: 50%;
     background-color: #c2617e;
     transform: scale(0);
-    transition: all .5s cubic-bezier(0.86,-0.02, 0.08, 1.02) 0s;
+    transition: all 0.5s cubic-bezier(0.86, -0.02, 0.08, 1.02) 0s;
   }
   &::after {
     top: 50%;
@@ -261,14 +304,20 @@ export const PrevButton = styled.button`
     border-top: solid 3px ${color2};
     border-left: solid 3px ${color2};
     transform: translate(-25%, -50%) rotate(-45deg);
-    transition: all .5s cubic-bezier(0.86,-0.02, 0.08, 1.02) 0s;
+    transition: all 0.5s cubic-bezier(0.86, -0.02, 0.08, 1.02) 0s;
   }
-  &:hover::before { ${pcLayout(`transform: scale(1);`)} }
-  &:hover::after { ${pcLayout(`border-color: #fff;`)} }
-  &:focus { outline: none; }
+  &:hover::before {
+    ${pcLayout(`transform: scale(1);`)}
+  }
+  &:hover::after {
+    ${pcLayout(`border-color: #fff;`)}
+  }
+  &:focus {
+    outline: none;
+  }
 
   /* animation */
-  animation: ${prewButtonShow} .3s ease-out 2.6s forwards;
+  &[data-show=true]{ animation: ${prewButtonShow} 0.3s ease-out 2.6s forwards; }
 `
 
 export const NextButton = styled.button`
@@ -295,7 +344,7 @@ export const NextButton = styled.button`
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
   }
@@ -307,7 +356,7 @@ export const NextButton = styled.button`
     border-radius: 50%;
     background-color: #c2617e;
     transform: scale(0);
-    transition: all .5s cubic-bezier(0.86,-0.02, 0.08, 1.02) 0s;
+    transition: all 0.5s cubic-bezier(0.86, -0.02, 0.08, 1.02) 0s;
   }
   &::after {
     top: 50%;
@@ -317,14 +366,20 @@ export const NextButton = styled.button`
     border-top: solid 3px ${color2};
     border-right: solid 3px ${color2};
     transform: translate(-75%, -50%) rotate(45deg);
-    transition: all .5s cubic-bezier(0.86,-0.02, 0.08, 1.02) 0s;
+    transition: all 0.5s cubic-bezier(0.86, -0.02, 0.08, 1.02) 0s;
   }
-  &:hover::before { ${pcLayout(`transform: scale(1);`)} }
-  &:hover::after { ${pcLayout(`border-color: #fff;`)} }
-  &:focus { outline: none; }
+  &:hover::before {
+    ${pcLayout(`transform: scale(1);`)}
+  }
+  &:hover::after {
+    ${pcLayout(`border-color: #fff;`)}
+  }
+  &:focus {
+    outline: none;
+  }
 
   /* animation */
-  animation: ${nextButtonShow} .3s ease-out 2.8s forwards;
+  &[data-show=true] { animation: ${nextButtonShow} 0.3s ease-out 2.8s forwards; }
 `
 
 export const Footer = styled.div`
@@ -357,7 +412,7 @@ export const CopyButton = styled.button`
   transform: translate(-50%, 50%);
   cursor: pointer;
   overflow: hidden;
-  transition: all .5s cubic-bezier(0.86,-0.02, 0.08, 1.02) 0s;
+  transition: all 0.5s cubic-bezier(0.86, -0.02, 0.08, 1.02) 0s;
 
   ${pcLayout(`
     width: 200px;
@@ -375,7 +430,7 @@ export const CopyButton = styled.button`
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -387,12 +442,12 @@ export const CopyButton = styled.button`
   &::before {
     background-color: #4aa9a4;
     transform: translateX(-100%);
-    transition: all .5s cubic-bezier(0.86,-0.02, 0.08, 1.02) 0s;
+    transition: all 0.5s cubic-bezier(0.86, -0.02, 0.08, 1.02) 0s;
   }
   &::after {
-    content: "COPY";
+    content: 'COPY';
     color: #fff;
-    letter-spacing: .2em;
+    letter-spacing: 0.2em;
 
     ${pcLayout(`
       font-size: 20px;
@@ -404,9 +459,15 @@ export const CopyButton = styled.button`
       line-height: 40px;
     `)}
   }
-  &:hover::before { ${pcLayout(`transform: translateX(0);`)} }
-  &:hover { ${pcLayout(`box-shadow: 0 0 10px #4aa9a4;`)} }
-  &:focus { outline: none; }
+  &:hover::before {
+    ${pcLayout(`transform: translateX(0);`)}
+  }
+  &:hover {
+    ${pcLayout(`box-shadow: 0 0 10px #4aa9a4;`)}
+  }
+  &:focus {
+    outline: none;
+  }
 `
 
 export const LineBack = styled.div`
@@ -432,8 +493,12 @@ export const LineBack = styled.div`
     height: 150%;
     background-color: ${color2};
   }
-  div:nth-child(1) { left: 55px; }
-  div:nth-child(2) { right: 55px; }
+  div:nth-child(1) {
+    left: 55px;
+  }
+  div:nth-child(2) {
+    right: 55px;
+  }
 `
 
 export const LineFront = styled.div`
@@ -464,7 +529,7 @@ export const LineFront = styled.div`
     ${spLayout(`bottom: -20px;`)}
 
     &::after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       bottom: -4.5px;
@@ -475,6 +540,10 @@ export const LineFront = styled.div`
       border-radius: 50%;
     }
   }
-  div:nth-child(1) { left: 25px; }
-  div:nth-child(2) { right: 25px; }
+  div:nth-child(1) {
+    left: 25px;
+  }
+  div:nth-child(2) {
+    right: 25px;
+  }
 `
