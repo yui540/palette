@@ -8,6 +8,22 @@ const color2 = '#5d3523'
 const color3 = '#ccc'
 const color4 = '#c2617e'
 
+export const Bg = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.8);
+  display: none;
+  opacity: 0;
+
+  &[data-show=true] {
+    display: block;
+    animation: ${fadein} 2s ease 0s forwards;
+  }
+`
+
 export const Container = styled.div`
   position: fixed;
   top: 0;
@@ -15,9 +31,10 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   perspective: 600px;
+  transform: translateY(-100%);
 
   /* animation */
-  animation: ${bound} 0.9s ease-out 0s forwards;
+  &[data-show=true] { animation: ${bound} 0.9s ease-out 0s forwards; }
 `
 
 export const Inner = styled.div`
@@ -28,7 +45,15 @@ export const Inner = styled.div`
   height: 100%;
 
   /* animation */
-  animation: ${rotate} 3s ease-out 0s forwards;
+  &[data-show=true] { animation: ${rotate} 3s ease-out 0s forwards; }
+`
+
+export const Close = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `
 
 export const Panel = styled.div`
@@ -113,7 +138,7 @@ export const ColorContent = styled.div`
   `)}
 
   /* animation */
-  animation: ${border} 1.4s ease-out 2.6s forwards;
+  &[data-show=true] { animation: ${border} 1.4s ease-out 2.6s forwards; }
 `
 
 export const ProductName = styled.div`
@@ -143,10 +168,10 @@ export const ProductName = styled.div`
   }
 
   /* animation */
-  span:nth-child(1) {
+  &[data-show=true] span:nth-child(1) {
     animation: ${fadein} 0.6s ease-in 1s forwards;
   }
-  span:nth-child(2) {
+  &[data-show=true] span:nth-child(2) {
     animation: ${fadein} 0.6s ease-in 1.4s forwards;
   }
 `
@@ -181,10 +206,10 @@ export const ColorCode = styled.div`
   }
 
   /* animation */
-  span:nth-child(1) {
+  &[data-show=true] span:nth-child(1) {
     animation: ${fadein} 0.6s ease-in 1.8s forwards;
   }
-  span:nth-child(2) {
+  &[data-show=true] span:nth-child(2) {
     animation: ${fadein} 0.6s ease-in 2.2s forwards;
   }
 `
@@ -230,7 +255,7 @@ export const ColorLine = styled.div`
   }
 
   /* animation */
-  &::before { animation: ${slideRight} .8s cubic-bezier(0.86,-0.02, 0.08, 1.02) .8s forwards; }
+  &[data-show=true]::before { animation: ${slideRight} .8s cubic-bezier(0.86,-0.02, 0.08, 1.02) .8s forwards; }
 `
 
 export const PrevButton = styled.button`
@@ -292,7 +317,7 @@ export const PrevButton = styled.button`
   }
 
   /* animation */
-  animation: ${prewButtonShow} 0.3s ease-out 2.6s forwards;
+  &[data-show=true]{ animation: ${prewButtonShow} 0.3s ease-out 2.6s forwards; }
 `
 
 export const NextButton = styled.button`
@@ -354,7 +379,7 @@ export const NextButton = styled.button`
   }
 
   /* animation */
-  animation: ${nextButtonShow} 0.3s ease-out 2.8s forwards;
+  &[data-show=true] { animation: ${nextButtonShow} 0.3s ease-out 2.8s forwards; }
 `
 
 export const Footer = styled.div`

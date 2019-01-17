@@ -7,6 +7,7 @@ interface Props {
   productName: string
   onMouseOver(num: number): void
   onMouseOut(): void
+  showModal(num: number): void
 }
 
 export default class Color extends React.Component<Props, {}> {
@@ -16,7 +17,8 @@ export default class Color extends React.Component<Props, {}> {
       color,
       num,
       onMouseOver,
-      onMouseOut
+      onMouseOut,
+      showModal
     } = this.props
 
     return (
@@ -24,6 +26,7 @@ export default class Color extends React.Component<Props, {}> {
         color={color}
         onMouseOver={() => onMouseOver(num)}
         onMouseOut={() => onMouseOut()}
+        onClick={() => showModal(num)}
       >
         <BgColor color={color} />
         <ProductName>{productName}</ProductName>
