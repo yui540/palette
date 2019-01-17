@@ -8,7 +8,7 @@ palette は、今まで作ってきた作品で使った色をまとめたサイ
 
 - デザイン・モーション・コーディング
   - yui540
-  - [https://twitter.com/yui540](Twitter - @yui540)
+  - [Twitter - @yui540](https://twitter.com/yui540)
 
 ## 色一つ一つに思い出があります
 
