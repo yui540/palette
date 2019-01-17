@@ -2,6 +2,7 @@ import * as React from 'react'
 import {
   Container,
   ColorWrapper,
+  Logo
 } from './styles'
 import Color from '../Color'
 import Modal from '../Modal'
@@ -43,6 +44,7 @@ export default class Top extends React.Component<Props, State> {
 
     return (
       <Container>
+        <Logo src='./images/logo.svg' alt='ロゴ' />
         <ColorWrapper>
           {colors.map((li, key) => (
             <Color
