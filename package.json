@@ -1,6 +1,6 @@
 {
   "name": "palette",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "『色の一つ一つに思い出が。』",
   "main": "webpack.config.js",
   "scripts": {
