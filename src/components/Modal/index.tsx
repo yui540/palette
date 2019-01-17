@@ -31,6 +31,20 @@ interface Props {
 }
 
 export default class Modal extends React.Component<Props, {}> {
+  private clickCopy(colorCode: string) {
+    const ele = document.createElement('div')
+
+    ele.appendChild(document.createElement('pre')).textContent = colorCode
+    ele.style.position = 'fixed'
+    ele.style.bottom = '-100%'
+
+    document.body.appendChild(ele)
+    document.getSelection()!.selectAllChildren(ele)
+    document.execCommand('copy')
+
+    document.body.removeChild(ele)
+  }
+
   public render() {
     const {
       productName,
@@ -72,7 +86,7 @@ export default class Modal extends React.Component<Props, {}> {
                 <NextButton onClick={() => nextColor()} data-show={modal} />
               </Body>
               <Footer>
-                <CopyButton />
+                <CopyButton onClick={() => this.clickCopy(color)} />
               </Footer>
             </Panel>
             <LineFront>
