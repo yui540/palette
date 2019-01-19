@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { pcLayout, spLayout } from '../../breakpoint'
+import { fadein } from '../../common-keyframes'
 
 export const Container = styled.div``
 
@@ -7,9 +8,12 @@ export const Logo = styled.img`
   display: block;
   margin: 0 auto;
   transform: translateY(-30%);
+  opacity: 0;
 
   ${pcLayout(`width: 400px;`)}
   ${spLayout(`width: 65%;`)}
+
+  animation: ${fadein} 1.5s ease 0s forwards;
 `
 
 export const ColorWrapper = styled.div`
@@ -17,12 +21,16 @@ export const ColorWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
+  opacity: 0;
 
   ${pcLayout(`
     max-width: 740px;
     margin-top: 10px;
   `)}
   ${spLayout(`margin-top: 5px;`)}
+
+  /* animation */
+  animation: ${fadein} 1.5s ease .3s forwards;
 `
 
 export const Footer = styled.footer`
@@ -69,6 +77,7 @@ export const Sns = styled.aside`
   position: fixed;
   background-color: #5d3523;
   padding: 10px 0;
+  opacity: 0;
 
   ${pcLayout(`
     top: 50%;
@@ -112,4 +121,7 @@ export const Sns = styled.aside`
   a:nth-child(1):hover { color: #2089a5; }
   a:nth-child(2):hover { color: #c7aa71; }
   a:nth-child(3):hover { color: #ad1341; }
+
+  /* animation */
+  animation: ${fadein} 1.5s ease .6s forwards;
 `
