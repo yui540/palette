@@ -79,98 +79,98 @@ export default [
   {
     color: '#c16798',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#e2877e',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#5f9da3',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#c5848b',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#c6e6ef',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#b46d95',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#EDC8CF',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#ADDDF7',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#EFCEC7',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#F7E4C6',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#DBBEB6',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#9B5B42',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#C7B3D6',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
   {
     color: '#B7D7B6',
     product: {
-      name: '由比ヶ浜結衣生誕2018日公式サイト',
+      name: '由比ヶ浜結衣生誕2018非公式サイト',
       link: 'https://github.com/yui540/HAPPY_BIRTHDAY_YUI',
     },
   },
@@ -382,6 +382,34 @@ export default [
     product: {
       name: '臆病な魔女',
       link: 'https://github.com/yui540/Cowardly-Witch',
+    },
+  },
+  {
+    color: '#2089a5',
+    product: {
+      name: 'palette - パレット',
+      link: 'https://github.com/yui540/palette',
+    },
+  },
+  {
+    color: '#c7aa71',
+    product: {
+      name: 'palette - パレット',
+      link: 'https://github.com/yui540/palette',
+    },
+  },
+  {
+    color: '#ad1341',
+    product: {
+      name: 'palette - パレット',
+      link: 'https://github.com/yui540/palette',
+    },
+  },
+  {
+    color: '#5d3523',
+    product: {
+      name: 'palette - パレット',
+      link: 'https://github.com/yui540/palette',
     },
   },
 ]
