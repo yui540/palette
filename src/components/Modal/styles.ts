@@ -98,15 +98,21 @@ export const Title = styled.div`
   color: ${color2};
   text-align: center;
   letter-spacing: 0.1em;
+  margin: 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   ${pcLayout(`
     font-size: 20px;
     line-height: 50px;
+    width: 85%;
   `)}
 
   ${spLayout(`
     font-size: 16px;
     line-height: 40px;
+    width: 80%;
   `)}
 `
 
