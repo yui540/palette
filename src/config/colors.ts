@@ -412,4 +412,11 @@ export default [
       link: 'https://github.com/yui540/palette',
     },
   },
+  {
+    color: '#ea8b98',
+    product: {
+      name: 'react-message-modal',
+      link: 'https://github.com/yui540/react-message-modal',
+    },
+  },
 ]
